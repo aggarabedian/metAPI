@@ -17,13 +17,22 @@ function App() {
         }
         )
       }, [])
-      console.log("### painting ###", painting);
 
-  return (
-    <div className='container'>
-      <img src={painting.primaryImage} alt={painting.title}/>
-    </div>
+  if (error) {
+    return (<div>Error: {error.message}</div>)
+  } else {
+    return (
+      <div className='container'>
+        <img src={painting.primaryImage} alt={painting.title}/>
+        <h2>
+          {painting.title}
+        </h2>
+        <h3>
+          {painting.artistDisplayName}
+        </h3>
+      </div>
   )
+  }
 }
 
 export default App;
