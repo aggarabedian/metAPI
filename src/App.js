@@ -31,19 +31,29 @@ function App() {
     )
   } else {
     return (
-      <div className='container'>
-        <div className='images'>
-          <img src={painting.primaryImageSmall} alt={painting.title}/>
-        </div>
-        <h2>
-          {painting.title}
-        </h2>
-        <h3>
-          {painting.artistDisplayName}
-        </h3>
-        <div>
-          <button onClick={() => setUrl(url - 1)}>Previous Painting</button>
-          <button onClick={() => setUrl(url + 1)}>Next Painting</button>
+      <div className='background'>
+        <div className='container'>
+          <div className='main'>
+            <div className='image'>
+              <img src={painting.primaryImage} alt={painting.title}/>
+            </div>
+            <div className='info'>
+            <h2>
+              {painting.title}
+            </h2>
+            <h3>
+              {painting.artistDisplayName}
+            </h3>
+            </div>
+            <div className='buttons'>
+              <button onClick={() => setUrl(url - 1)}>
+                Previous Painting
+              </button>
+              <button onClick={() => setUrl(url + 1)}>
+                Next Painting
+              </button>
+            </div>
+          </div>
         </div>
       </div>
   )

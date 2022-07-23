@@ -1,13 +1,39 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-color: whitesmoke;
+  border: whitesmoke 25px solid;
+}
+
 .container {
-  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: cornflowerblue;
+  border: yellow 3px solid;
+  justify-content: center;
 }
 
-.images img {
+.main {
+  border: yellow 3px solid;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 253, 253);
+  border-radius: 7px;
+}
+
+.image {
+  /* height: 100%; */
+}
+
+.image img {
   width: 300px;
-  height: auto;
 }
 
 .container h2 {
@@ -32,8 +58,8 @@ button:hover {
   background-color: lightsteelblue;
 }
 
-@media screen and (min-width: 650px) {
-  .images img {
+/* @media screen and (min-width: 650px) {
+  .image img {
     width: 400px;
   }
-}
+} */
