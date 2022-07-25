@@ -4,7 +4,7 @@
   width: 35px;
   aspect-ratio: .5;
   display: grid;
-  background: radial-gradient(#000 68%,#0000 72%) center/100% 50% no-repeat;
+  background: radial-gradient(rgb(133, 146, 131) 68%,#0000 72%) center/100% 50% no-repeat;
   animation: load 1.2s infinite linear calc(var(--_s,0)*.4s);
   transform: translate(calc(var(--_s,0)*150%));
 }

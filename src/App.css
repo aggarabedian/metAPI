@@ -1,8 +1,15 @@
+/* Color Variables */
+:root {
+  --background: rgb(206, 225, 202);
+  --highlight: rgba(249, 249, 249, 0.7);
+  --button: rgb(161, 185, 157);;
+  --button-hover: rgb(133, 146, 131);
+}
+
 .background {
   height: 100vh;
   width: 100vw;
-  background-color: whitesmoke;
-  border: whitesmoke 25px solid;
+  background-color: var(--background);
 }
 
 .container {
@@ -12,28 +19,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: cornflowerblue;
-  border: yellow 3px solid;
+  background-color: var(--background);
   justify-content: center;
-}
-
-.main {
-  border: yellow 3px solid;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(253, 253, 253);
-  border-radius: 7px;
-}
-
-.image {
-  /* height: 100%; */
-}
-
-.image img {
-  width: 300px;
+  padding: 0 15px;
 }
 
 .container h2 {
@@ -46,20 +34,85 @@
   margin: 1rem 0;
 }
 
+.main {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--highlight);
+  border-radius: 7px;
+}
+
+.image {
+  max-width: 95%;
+  max-height: auto;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.info h2 {
+  max-height: fit-content;
+}
+
+.info h3 {
+  align-self: flex-start;
+  max-height: fit-content;
+}
+
+.info h2, h3 {
+  cursor: default;
+}
+
+.info h2:hover, h3:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20%;
+}
+
 button {
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0.75rem;
   border: none;
-  background-color: whitesmoke;
+  background-color: var(--button);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
   border-radius: 7px;
 }
 
 button:hover {
-  background-color: lightsteelblue;
+  background-color: var(--button-hover);
 }
 
-/* @media screen and (min-width: 650px) {
-  .image img {
-    width: 400px;
+@media screen and (min-width: 750px) {
+  .image {
+    max-width: 700px;
+    max-height: 450px;
   }
-} */
+
+  .container {
+  padding: 0;
+  }
+
+  .buttons {
+    position: inherit;
+    padding-bottom: 0;
+  }
+}

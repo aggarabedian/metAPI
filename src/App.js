@@ -25,32 +25,31 @@ function App() {
 
   if (error) {
     return (<div>Error: {error.message}</div>)
-  } else if (!isLoaded) {
-    return (
-      <Loader />
-    )
   } else {
     return (
       <div className='background'>
         <div className='container'>
           <div className='main'>
             <div className='image'>
-              <img src={painting.primaryImage} alt={painting.title}/>
+            {isLoaded ?
+              <img src={painting.primaryImage} alt={painting.title}/> :
+              <Loader />
+            }
             </div>
             <div className='info'>
-            <h2>
+            <h2 onClick={() => window.open((painting.objectURL), '_blank')}>
               {painting.title}
             </h2>
-            <h3>
+            <h3 onClick={() => window.open((painting.artistWikidata_URL), '_blank')}>
               {painting.artistDisplayName}
             </h3>
             </div>
             <div className='buttons'>
               <button onClick={() => setUrl(url - 1)}>
-                Previous Painting
+                Previous
               </button>
               <button onClick={() => setUrl(url + 1)}>
-                Next Painting
+                Next
               </button>
             </div>
           </div>
