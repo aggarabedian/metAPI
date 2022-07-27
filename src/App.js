@@ -21,7 +21,7 @@ function App() {
           setError(error);
         }
         )
-      })
+      }, [url])
 
   if (error) {
     return (<div>Error: {error.message}</div>)
